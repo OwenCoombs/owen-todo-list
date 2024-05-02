@@ -19,6 +19,7 @@ export const taskReducer = (state, action) => {
             return {tasks: state.tasks.filter((task, index) => index !== action.index)}
         case 'setTasks':
             return { tasks: action.tasks };
+
             default:
                 throw new Error('Error')
     }

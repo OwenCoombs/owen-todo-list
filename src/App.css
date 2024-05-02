@@ -69,3 +69,8 @@ h4, #list:hover{
   font-size: 37px;
   text-decoration: line-through;
 }
+
+#editBtn{
+  margin-left: 50px;
+  cursor: pointer;
+}
