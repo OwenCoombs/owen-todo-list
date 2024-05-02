@@ -37,6 +37,7 @@ h2, h1, h5, h6, h3{
 h4, #list{
   color: white;
   font-size: 35px;
+  cursor: pointer;
   
 
 }
@@ -56,4 +57,15 @@ h4, #list{
   background-color: black;
   color: white;
   border: 1px;
+  cursor: pointer;
+}
+
+#taskBtn:hover{
+  font-size: 15px;
+}
+
+
+h4, #list:hover{
+  font-size: 37px;
+  text-decoration: line-through;
 }

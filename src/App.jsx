@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import './App.css'
 import NavBar from './navbar';
 import { TaskContext } from './main';
@@ -9,6 +9,19 @@ import unchecked from './assets/unchecked.svg'
 function App() {
   const [newTask, setNewTask] = useState('');
   const { state, dispatch } = useContext(TaskContext)
+  console.log(state)
+// Load tasks from local storage
+  useEffect(() => {
+    const storedTasks = localStorage.getItem('tasks');
+    if (storedTasks) {
+      dispatch({type: 'setTasks', tasks: JSON.parse(storedTasks) });
+    }
+
+  }, [dispatch]);
+// Save tasks to local storage whenever tasks state changes
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(state.tasks));
+  }, [state.tasks]);
 
   const removeTask = (index) => {
     dispatch({ type: 'removeTask', index });
@@ -27,7 +40,7 @@ function App() {
             value={newTask}
             onChange={(event) => setNewTask(event.target.value)}
           />
-          <button onClick={() => dispatch({ type: 'addTask', title: newTask })} id='taskBtn'>Add Task
+          <button onClick={() => dispatch({ type: 'addTask', title: newTask })}>Add Task
           
           </button>
         </div>
