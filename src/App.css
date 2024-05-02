@@ -73,4 +73,24 @@ h4, #list:hover{
 #editBtn{
   margin-left: 50px;
   cursor: pointer;
+  text-decoration: line-through;
 }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh; 
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay img {
+  /* Style your GIF here */
+  max-width: 100%;
+  max-height: 100%;
+}
+
