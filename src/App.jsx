@@ -27,7 +27,7 @@ function App() {
             value={newTask}
             onChange={(event) => setNewTask(event.target.value)}
           />
-          <button onClick={() => dispatch({ type: 'addTask', title: newTask })}>Add Task
+          <button onClick={() => dispatch({ type: 'addTask', title: newTask })} id='taskBtn'>Add Task
           
           </button>
         </div>
