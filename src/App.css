@@ -82,7 +82,7 @@ h4, #list:hover{
   left: 0;
   width: 100vw; 
   height: 100vh; 
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  background-color: rgba(0, 0, 0, 0.5); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,4 +93,6 @@ h4, #list:hover{
   max-width: 100%;
   max-height: 100%;
 }
+
+
 

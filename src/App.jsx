@@ -76,7 +76,6 @@ function App() {
       </div>
       {overlayVisible && (
         <div className="overlay">
-          
           <img src={realconfetti} alt="Overlay GIF" />
         </div>
       )}
