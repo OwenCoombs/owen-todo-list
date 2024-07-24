@@ -1,7 +1,6 @@
 // Retrieve tasks from local storage and parse them as JSON
 const storedTasks = JSON.parse(localStorage.getItem('tasks'));
 
-
 console.log(storedTasks);
 
 // Define the initial state for tasks. If there are stored tasks, use them, otherwise initialize an empty array.
@@ -12,7 +11,7 @@ export const taskReducer = (state, action) => {
     switch(action.type){
         // Action to add a task: Create a new state with the new task added to the tasks array
         case 'addTask':
-            return { tasks: [...state.tasks, {title: action.title}] };
+            return { tasks: [...state.tasks, { title: action.title, completed: false }] };
         
         // Action to remove a task: Create a new state with the specified task removed from the tasks array
         case 'removeTask':
@@ -22,8 +21,15 @@ export const taskReducer = (state, action) => {
         case 'setTasks':
             return { tasks: action.tasks };
         
+        // Action to toggle task completion: Update the completed status of the specified task
+        case 'toggleTask':
+            return {
+                tasks: state.tasks.map((task, index) =>
+                    index === action.index ? { ...task, completed: !task.completed } : task
+                ),
+            };
         
         default:
             throw new Error('Error');
     }
-}
+};

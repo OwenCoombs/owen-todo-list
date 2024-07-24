@@ -1,98 +1,143 @@
+/* App.css */
 
-#logo{
-  width: 110px ;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  
+/* General Styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #1e1e1e;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-body{
-  background-color: black;
+/* Container */
+.container {
+  background-color: #2a2a2a;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
 }
 
-h2, h1, h5, h6, h3{
-  color: white;
+/* Header */
+h2 {
   text-align: center;
-  font-family: "Indie Flower", cursive;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 40px;
-  text-decoration: underline;
- 
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #ff6f61;
 }
 
-
-.indie-flower-regular {
-  font-family: "Indie Flower", cursive;
-  font-weight: 400;
-  font-style: normal;
+/* Input and Button */
+#form {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
-#form{
-  text-align: center;
+#form input {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #3a3a3a;
+  color: #fff;
 }
 
-
-h4, #list{
-  color: white;
-  font-size: 35px;
+#taskBtn {
+  padding: 15px;
+  background-color: #ff6f61;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  
-
+  transition: background-color 0.3s;
+  font-size: 16px;
 }
 
-#howto{
-  margin-top: 300px;
+#taskBtn:hover {
+  background-color: #ff3f31;
 }
 
-#howtoP{
-  font-size: 20px;
-  color: white;
-  text-align: center;
+/* Task List */
+#list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-
-#taskBtn{
-  background-color: black;
-  color: white;
-  border: 1px;
+#list li {
+  background-color: #3a3a3a;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
 }
 
-#taskBtn:hover{
-  font-size: 15px;
-}
-
-
-h4, #list:hover{
-  font-size: 37px;
+#list li.completed {
   text-decoration: line-through;
+  color: #888;
 }
 
-#editBtn{
-  margin-left: 50px;
+#list li:hover {
+  background-color: #4a4a4a;
+}
+
+.deleteBtn {
+  background-color: #ff3f31;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 10px;
   cursor: pointer;
-  text-decoration: line-through;
+  transition: background-color 0.3s;
+  margin-left: 10px;
 }
 
+.deleteBtn:hover {
+  background-color: #ff1f11;
+}
+
+/* Overlay */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; 
-  height: 100vh; 
-  background-color: rgba(0, 0, 0, 0.5); 
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .overlay img {
-  /* Style your GIF here */
-  max-width: 100%;
-  max-height: 100%;
+  width: 200px;
+  height: 200px;
 }
 
+/* How To Use */
+#howto {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #ff6f61;
+}
 
+#howtoP {
+  text-align: center;
+  font-size: 14px;
+  color: #ccc;
+}
 
